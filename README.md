@@ -286,5 +286,5 @@ This project is under an MIT licence
 
 Contribute if and only if you know what you are doing (and optionally, it would help if you where Germanic or fluent in Germanics)
 
-\* If someone wants to convert this to Latex, go ahead and pull request (must have a index or contents page with links)
+\* If someone wants to convert this to Latex, go ahead and pull request (must have a index or contents page with links). I tried with pandoc, but it was not as complete as I thought so if anyone wants to do clean up, go ahead, also I can still export as pdf
 
