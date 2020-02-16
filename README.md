@@ -9,10 +9,10 @@ This course will focus on set theory and number theory (and logic)
 
 ## Index
 
-1. Sets
-2. Logic
-3. What is a number? (It's not what you think it is)
-4. Induction
+1. [Sets](#set)
+2. [Logic](#logic)
+3. [What is a number? (It's not what you think it is)](#number)
+4. [Induction](#induction)
 5. Absolute values
 6. Intervals and bounds
 7. Real numbers
@@ -98,7 +98,9 @@ $\Q \to$ rational numbers (anything that can be expressed as $\frac{p}{q}, where
 
 $\R \to$ will be discussed later
 
-#### 1. Sets
+<a name='set'></a>
+
+#### 1. Sets 
 
 a set is defined as a number (can be 0 but then that would be the trivial or stupid set) of elements belonging to the same group
 
@@ -119,6 +121,8 @@ If elements of A are present in B, then those elements 'C' are said to be $A\cap
 ![venn diagram](pics/figure1venn.png)
 
 From Bowmen notes
+
+<a name='logic'></a>
 
 #### 2. Logic
 
@@ -191,7 +195,9 @@ The easiest way to prove something is to use *proof by contradiction*. Assume th
 > $$
 > \* note even number are expressed as 2n and odd number can be expressed as 2n+1 for $n\in\Z$
 >
-> Therefore p must be even because only an even squared is even $((2n)^2=4n^2\ and\ (2n+1)^2 = 4n^2+2n+1\therefore odd)$
+> Therefore p must be even because only an even squared is even $((2n)^2=4n^2\ and\ (2n+1)^2 = 4n^2+2n+1\therefore odd)$ 
+
+<a name='number'></a>
 
 #### 3. What is a number? (Algebraic Properties)
 
@@ -257,6 +263,8 @@ Also note the first lemma (lemma is like a theorem but arbitrary defined to be a
 
 ![figure2midway](pics/figure2midway.png)
 
+<a name='induction'></a>
+
 #### 4. Induction
 
 
@@ -286,5 +294,5 @@ This project is under an MIT licence
 
 Contribute if and only if you know what you are doing (and optionally, it would help if you where Germanic or fluent in Germanics)
 
-\* If someone wants to convert this to Latex, go ahead and pull request (must have a index or contents page with links). I tried with pandoc, but it was not as complete as I thought so if anyone wants to do clean up, go ahead, also I can still export as pdf
+\* If someone wants to convert this to Latex, go ahead and pull request (must have a index or contents page with links). I tried with pandoc, but it was not as complete as I thought so if anyone wants to do clean up, go ahead, also I can just export as pdf
 
