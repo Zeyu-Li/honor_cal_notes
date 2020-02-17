@@ -7,6 +7,8 @@ This course will focus on set theory and number theory (and logic)
 
 \* note this won't display properly on GitHub, I use a program called [Typora](https://typora.io/) with inline math enabled
 
+<a name="top"></a>
+
 ## Index
 
 1. [Sets](#set)
@@ -16,8 +18,8 @@ This course will focus on set theory and number theory (and logic)
 5. [Absolute values and Binomial Thm](#abs)
 6. [Intervals and bounds](#inter)
 7. [Real numbers](#real)
-8. [Sequences and limits](#seq)
-9. Functions (and notation)
+8. [Sequences and limits](#8)
+9. [Functions (and notation)](#func)
 10. Continuity
 11. 1-sided limits
 12. min/max and sup/inf
@@ -45,6 +47,10 @@ Ex. $\to$ example
 Thm $\to$ Theorem (will be in block quotes)
 
 s.t. $\to$ such that
+
+, or ; $\to$ such that, so (general connector depending on context)
+
+wLOG $\to $ without loss of generality (i.e. similar to previous case, but I'm too lazy to do it)
 
 ##### Formal Logic
 
@@ -121,6 +127,10 @@ If elements of A are present in B, then those elements 'C' are said to be $A\cap
 ![venn diagram](pics/figure1venn.png)
 
 From Bowmen notes
+
+\* Most of the time, Russell's paradox will be introduced to scare any students still in the class. 
+
+==Optional Exercise: look into Russell's paradox because it is quite interesting==
 
 <a name='logic'></a>
 
@@ -346,11 +356,70 @@ $(a+b)^n=\sum^n_{k=0}\binom{n}{k}a^{n-k}b^k$ (can also be proved by induction, s
 
 ![figure3lazy](pics/figure3lazy.png)
 
-<a name='Inter'></a>
+<a name='inter'></a>
 
 #### 6. Intervals and bounds
 
+**Open and closed intervals are defined as the following**
+$$
+For \ a,b\in\R\ and \ a<b \\
+ [a,b]=\{x:a\le x\le b\}, \to closed\\
+ (a,b)=\{x:a< x< b\}, \to  open\\
+ [a,b)=\{x:a\le x< b\}, \to relatively\ open\\
+ (a,b]=\{x:a< x\le b\}, \to relatively\ open\\
+$$
+**not finite intervals**
+$$
+(-\infin , \infin) =\R
+\\ [a,\infin)=\{x:x\ge a\}
+\\ (-\infin, a)=\{x: x<a\}
+$$
 
+##### Upper/lower bounds
+
+A real number b is an upper bound $S$ if
+
+$x\le b\ for \ each \ x\in S$
+
+If no b exists are a upper bound of $S$, we say it is unbounded above
+
+\* Lower bound is similar (wLOG)
+
+**Supremum and Infimum (Sup and Inf)**
+
+b is the sup of $S$ if it is the least upper bound ($b=\sup \ S$)
+
+If b is the sup of $S$ and is in $S$, (i.e. $b=\sup \ S\ and\ x\in S$ ), it is said to be the maximum
+
+\* Infimum  is similar (wLOG)
+
+<a name='real'></a>
+
+#### 7. Real numbers
+
+A real number is only defined if it satisfies all the rules laid out in [chapter 3](#number) and it follows the completeness axiom.
+
+**Completeness Axiom:**
+
+For every non-trivial subset of $\R$ with an upper bound has a lease upper bound in $\R$, (i.e. the $\sup$ exists in $\R$)
+
+> * $\{\frac{p}{q}:p^2\le 2p^2, p\in \Z , q\in \N \}$
+> * [0, 1] as sup at 1
+> * [0,1) has sup at 1
+
+> Lemma - Archimedean Property:
+>
+> No real number is an upper bound for $\N$
+>
+> Notes: $\N\sub \R$ (can be proved inductively)
+
+<a name='8'></a>
+
+#### 8. Sequences and limits
+
+
+
+[**⬆ Back to top**](#top)
 
 ## Resources
 
