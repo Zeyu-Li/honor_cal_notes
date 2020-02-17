@@ -23,7 +23,7 @@ This course will focus on set theory and number theory (and logic)
 8. [Sequences and limits](#8)
 9. [Functions (and notation)](#func)
 10. [Continuity](#10)
-11. 1-sided limits
+11. [1-sided limits](#11)
 12. Rolle's theorem
 13. Intermediate value theorem (IVT)
 14. Mean value theorem (MVT aka Meme value theorem)
@@ -36,7 +36,8 @@ This course will focus on set theory and number theory (and logic)
 21. Implicit differentiation
 22. Exponentials and logs
 23. Logarithmic differentiation
-24. [Resources](#end)
+24. [Misc Notes](#misc)
+25. [Resources](#end)
 
 
 
@@ -646,9 +647,19 @@ $\lim_{x\to x_o}f(x)=\infin $ if for every M>0, there is $\delta>0$ s.t. $\foral
 
 #### 10. Continuity:
 
+Simply, a function is continuous if when you draw it out, your pen/pencil does not leave the paper (sorry I have not defined what pen/pencil and paper is but that is for another course (possibly Bio 399))
+
+
+
+<a name="11"></a>
+
+#### 11. 1-sided limits:
+
 
 
 [**⬆ Back to top**](#top)
+
+<a name="misc"></a>
 
 ## Misc. Notes:
 
