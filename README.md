@@ -20,7 +20,7 @@ This course will focus on set theory and number theory (and logic)
 7. [Real numbers](#real)
 8. [Sequences and limits](#8)
 9. [Functions (and notation)](#func)
-10. Continuity
+10. [Continuity](#10)
 11. 1-sided limits
 12. min/max and sup/inf
 13. Rolle's theorem
@@ -51,6 +51,8 @@ s.t. $\to$ such that
 , or ; $\to$ such that, so (general connector depending on context)
 
 wLOG $\to $ without loss of generality (i.e. similar to previous case, but I'm too lazy to do it)
+
+seq. $\to$ sequence
 
 ##### Formal Logic
 
@@ -411,15 +413,138 @@ For every non-trivial subset of $\R$ with an upper bound has a lease upper bound
 >
 > No real number is an upper bound for $\N$
 >
-> Notes: $\N\sub \R$ (can be proved inductively)
+> Notes: $\N\sub\ \R$ (can be proved inductively)
 
 <a name='8'></a>
 
 #### 8. Sequences and limits
 
+A sequence of real numbers is a function (see chapter below) s.t. $a:\N \to \R$. Usually a sequence is written as $a_n$ instead of $a(n)$. Sometimes a sequence can start at $k, s.t.\ k\in \Z, instead\ of \ k\in\N$.
+
+A sequence is improper if $\exists\ k\in a_n\ if\ k \ is\ \pm \infin $
+
+\* also note an extended real number system is $\overline{\R}=\R \cup \{-\infin, \infin\}$
+
+**Rules on extended real number system **:
+
+![figure4rules](pics/figure4rules.png)
+
+==**Limits**== (This is mega important)
+
+$a_n$ is a sequence. The limit of the sequence ($a_n $) is L, s.t.  $L\in \R$ and $\lim_{n\to \infin}a_n=L$ if for every $\epsilon > 0, \exists\ N\in\N, s.t. |a_n-L|<\epsilon, \forall\ n>N$
+
+Translation to English: The limit of the sequence as the index approaches infinity exists, if there exists an error ($\epsilon$ = epsilon that is greater than 0) small enough the element in sequence at index very very large (approaches $\infin$) minus the defined limit is less than that error.  [Think of an error bar of value $\epsilon$ and $|a_n-L|$ being within the error bar if limit exists]
+
+<img src="pics/figure5graph.png" alt="figure5graph" style="zoom:100%;" />
+
+If that limit exists, it is convergent, otherwise, it is divergent (improper limit of the sequence)
+
+If $\lim_{n\to \infin }a_n =\infin,$ if $\forall$ M>0, there is $N\in \N $ s.t. $a_n >M\ \forall\ n>N$ (wLOG for $-\infin$) 
+
+**Properties of limits**
+
+Let $a_n, b_n$ be sequences with limit L and M
+
+1. If $c,d\in \R, and\ cL,dM$ are both finite of opposing signs, then $ca_n +db_n \to cL+dM$
+2. If LM is not undefined, 0 $x\pm\infin, a_b b_n \to LM$
+3. If $M\ne 0,$ and both M, N are finite, then $\frac{a_n}{b_n}\to\frac{L}{M}$ (only for n large enough)
+4. If $L=\pm \infin$, then $\frac{1}{a_n}\to 0$ (only for n large enough)
+
+\* look at page 36 of Bowmen notes to see proofs
+
+> Lemma
+>
+> If $a_n \le b_n\ \forall\ n\ and \ a_n\to L,b_n\to M. \to \ L\le M$
+>
+> Squeeze thm (or sandwich thm if and only if you are hungry)
+>
+> If $a_n, c_n \to L\ and \ a_n\le b_n\le c_n \forall n. \to b_n \to L$
+>
+> A sequence is bounded if $\exists M\in \R, s.t. |a_n|\le M\ \forall\ n$
+>
+> Helpful example:
+>
+> ​	$|sin(x)|\le 1$
+>
+> Why? Homework question
+
+Now what max and min functions are (they are self explanatory, otherwise, look it up in the python docs)
+
+> Thm:
+>
+> Convergent sequence implies bounded but not the other way
+>
+> (convergent $\to$ bounded)
+>
+> (bounded $\not \to$ convergent)
+
+##### Monotone
+
+A sequence is increasing if for $a_n$,
+$$
+a_1\le a_2\le\ ..., i.e. \ a_n\le a_{n+1}\ \forall n\in \N
+$$
+A sequence is strictly increasing if for $a_n$,
+$$
+a_1< a_2<\ ..., i.e. \ a_n<a_{n+1}\ \forall n\in \N
+$$
+\* likewise for decreasing
+
+A sequence if **monotone** if it is either an increasing or a decreasing sequence (or both)
+
+In monotone sequences, $convergent \iff bounded$
+
+**Subsequences**
+
+Given a seq. $\lim_{n\to\infin}a_n $ and a strictly increasing sequence of natural numbers  $\lim_{n\to\infin}n_k$, we can form subsequence  $\lim_{n\to \infin } $  $a_{n_k}$ of $\lim_{n\to\infin}a_n $
+
+> Ex.
+>
+>  $\lim_{n\to\infin}(2k-1)^2=\{1,9,25...\}$ is a subsequence of  $\lim_{n\to\infin}n^2=\{1,4,9,16,...\}$
+>
+> Thm. 
+>
+> convergent $\iff$ all subsequence convergent
+>
+> Lemma:
+>
+> a) $0\le c<1 \to c^n \le c\le 1$
+>
+> b) $c > 1 \to c^n \ge c > 1$
+>
+> ![figure6bounds](pics/figure6bounds.png)
+>
+> $\forall n\in \N$
+>
+> c) $0\le c<1 \to c\le c^{1/n}<1$
+>
+> d) $c>1>1 \to c\ge c^{1/n}>1$
+>
+> **Ratio test for seq**
+>
+> $\lim_{n\to \infin} |\frac{a_{n+1}}{a_n}|=r\ where\ r\in[0,1)\ means\ that\ a_n \ is\ bounded\ and \to0$
+
+**Bolzano-Weierstrass Thm:**
+
+A bounded sequence has a convergent subsequence (see page 49 for proof)
+
+**Cauchy Criterion**
+
+ A sequence $a_n$ is a Cauchy sequence (or just Cauchy) if $\forall \epsilon>0\ \exist \ N\ s.t.\\ m,n >N \to |a_m-a_n|<\epsilon$
+
+$\therefore\ a_n$ is convergent $\iff a_n$ is Cauchy
+
+<a name='func'></a>
+
+#### 9. Functions
 
 
-[**⬆ Back to top**](#top)
+
+[⬆ Back to top**](#top)
+
+## Misc. Notes:
+
+![miscform](pics/miscform.png)
 
 ## Resources
 
