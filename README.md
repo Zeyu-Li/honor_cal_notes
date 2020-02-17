@@ -13,10 +13,10 @@ This course will focus on set theory and number theory (and logic)
 2. [Logic](#logic)
 3. [What is a number? (It's not what you think it is)](#number)
 4. [Induction](#induction)
-5. Absolute values
-6. Intervals and bounds
-7. Real numbers
-8. Sequences and limits
+5. [Absolute values](#abs)
+6. [Intervals and bounds](#inter)
+7. [Real numbers](#real)
+8. [Sequences and limits](#seq)
 9. Functions (and notation)
 10. Continuity
 11. 1-sided limits
@@ -266,6 +266,37 @@ Also note the first lemma (lemma is like a theorem but arbitrary defined to be a
 <a name='induction'></a>
 
 #### 4. Induction
+
+Steps
+
+1. Prove for any element in set (usually 1 or 0 if they are in the set)
+2. Suppose true for n
+3. Prove for n+1
+
+==Notice==: This makes it so it holds true for the first tested element and for every subsequent element (like a domino effect)
+
+> Ex. 
+>
+> Gauss’ claim:
+> $$
+> 1+2+...+n\equiv\sum_{i=1}^ni=\frac{n(n+1)}{2}\\
+> Let\ S\ be \ set\ n
+> \\ Step\ 1:\ Check\ 1\in S\\
+> 1=\frac{1(1+1)}{2}=1\\
+> Step \ 2: \ Suppose \ k \in S\\
+> \therefore \sum_{i=1}^ni=\frac{k(k+1)}{2}
+> \\Then\ prove\ k+1\\\sum_{i=1}^{k+1}i=\frac{k(k+1)}{2}=1+2+3+...+k+(k+1)\\
+> = \frac{k(k+1)}{2}+(k+1)\\
+> =(k+1)(\frac{k}{2}+1)\\
+> =\frac{(k+1)((k+1)+1)}{2}
+> $$
+> Hence $k+1\in S$ or $k\in S \to k+1\in S$
+>
+> \* see Bowmen notes (starting from page 19) for more examples
+
+<a name='abs'></a>
+
+#### 5. Absolute Values
 
 
 
