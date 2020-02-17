@@ -11,6 +11,8 @@ This course will focus on set theory and number theory (and logic)
 
 ## Index
 
+0. [Shorthand](#0)
+
 1. [Sets](#set)
 2. [Logic](#logic)
 3. [What is a number? (It's not what you think it is)](#number)
@@ -22,23 +24,25 @@ This course will focus on set theory and number theory (and logic)
 9. [Functions (and notation)](#func)
 10. [Continuity](#10)
 11. 1-sided limits
-12. min/max and sup/inf
-13. Rolle's theorem
-14. Intermediate value theorem
-15. Mean value theorem (Meme value theorem)
-16. Differentiation
-17. First and second derivative test
-18. L'Hopital's Rule (Le hospital)
-19. Taylor's Theorem
-20. Convex and concave
-21. Inverse functions
-22. Implicit differentiation
-23. Exponentials and logs
-24. Logarithmic differentiation
+12. Rolle's theorem
+13. Intermediate value theorem (IVT)
+14. Mean value theorem (MVT aka Meme value theorem)
+15. Differentiation
+16. First and second derivative test
+17. L'Hopital's Rule (Le hospital)
+18. Taylor's Theorem
+19. Convex and concave
+20. Inverse functions
+21. Implicit differentiation
+22. Exponentials and logs
+23. Logarithmic differentiation
+24. [Resources](#end)
 
 
 
 ## Notes
+
+<a name="0"></a>
 
 #### 0. Shorthand
 
@@ -468,7 +472,7 @@ Let $a_n, b_n$ be sequences with limit L and M
 >
 > Why? Homework question
 
-Now what max and min functions are (they are self explanatory, otherwise, look it up in the python docs)
+Now what max and min functions are (they are self explanatory, otherwise, look it up in the [python docs](https://www.geeksforgeeks.org/max-min-python/))
 
 > Thm:
 >
@@ -538,13 +542,125 @@ $\therefore\ a_n$ is convergent $\iff a_n$ is Cauchy
 
 #### 9. Functions
 
+A function $f:X\to Y$ is a rule that assigns each $x \in X $ to element $F(x) \in Y$. 
+
+The set of all X is called the domain of f, while the Y is called the codomain
+
+The range or image of f is the set $f(X) = \{f(x)|x\in X\}$
+
+\* think of a rule as a machine that takes X and through a defined process turns that X or all X to Y
+
+==Note:== 
+
+$f: \R_{\ge0}\to \R $ defined by f(x)$=x^2$ is different from$g:\R\to\R$ also defined by $x\mapsto x^2$ (Note $\mapsto$ is maps to and is used more often in linear algebra)
+
+**Trigonometry**
+
+> opp = opposite
+>
+> hyp = hypotonus 
+>
+> adj = adjacent
+> $$
+> sinx=\frac{opp}{hyp}\\
+> cosx=\frac{adj}{hyp}\\
+> tanx=\frac{opp}{adj}=\frac{sinx}{cosx}\\
+> 
+> \\
+> cscx=\frac{1}{sinx}\\
+> \sec x=\frac{1}{cosx}\\
+> cotx=\frac{1}{tanx}\\
+> \\
+> Pythagoras'\ Theorem
+> \\ opp^2+adj^2=hyp^2\\
+> \to sin^2x+cos^2x=1
+> \\1+cot^2x=csc^2x\\tan^2x+1=sec^2x
+> \\Also,\ |sinx|\le1\ \&\ |cosx|\le1
+> $$
+> This can be demonstrated with a unit circle
+>
+> \* Note, degrees will not be used, use radians
+>
+> $\pi$ radians = $180^o$
+>
+> ![figure7unit circle](pics/figure7unit circle.png)
+>
+> $cos θ = sin (\frac{\pi }{2} − θ ) ,$
+>
+> $sinθ= cos(\frac{\pi }{2} − θ ) ,$
+> $$
+> Supplementary \ Angle \ Identities:\\
+> sin(\pi-x)=sinx\\
+> cos(\pi-x)=-cosx\\
+> Symmetries:\\
+> sin(-x)=-sinx
+> \\cos(-x)=cosx
+> \\sin(x+2\pi)=sinx\\
+> cos(x+2\pi)=cosx
+> $$
+> Special values:
+> $$
+> sin0=cos(\frac{\pi}{2})=0\\
+> sin(\pi/2)=cos0=1
+> \\sin(\pi/4)=cos(\pi/4)=1/\sqrt{2}\\
+> sinx(\pi/6)=cos(\pi/3)=1/2\\
+> sin(\pi/3)=cos(\pi/6)=\sqrt{3}/2
+> \\ cos(A-B)=cosAcosB+sinAsinB\\
+> $$
+> Double Angle Formulas:
+> $$
+> sin2A=2sinAcosA\\
+> cos2A=2cos^2A-1=1-2sin^2A\\
+> tan2A=\frac{2tanA}{1-tan^2A}\\
+> sinx\le x\le tanx\ \forall x\in [0, \pi/2)\\
+> Also:\\
+> |sinx|\le |x| \ \forall x\in\R
+> $$
+> 
+
+Let I be interval s.t. $x_o$ is an accumulation point of f (see misc. notes below) (i.e. $x_o \in I\ or\ x_o \in \delta I$)
+
+For any function with domain I, we say the real number $\infin$ is the limit of f as x approaches $x_o$
+
+$\lim_{x\to x_o}f(x)=\infin $ if for every M>0, there is $\delta>0$ s.t. $\forall x\ne x_o \in I\ with\ |x-x_o|<\delta, f(x) > M$, likewise for $-\infin$
+
+> Thm. Equivalence of Function and Sequence Limits:
+>
+> $\lim_{x\to a }f(x)=L \iff f$ is defined near a and every sequence point in $x_n$ in the domain of f with $x_n\ne a$, but $\lim_{n\to \infin} x_n = a$, satisfies $\lim_{n\to \infin} f(x_n )= L$
+>
+> \* See page 68 for proof
+>
+> Corollary:
+>
+> Assume $\lim_{x\to a }f(x)=L$ and $\lim_{x\to a }g(x)=M$
+>
+> 1. $\lim_{x\to a }(f(x)+g(x))=L+M$
+> 2. $\lim_{x\to a }f(x)g(x)=LM$
+> 3. $\lim_{x\to a }\frac{f(x)}{g(x)}=\frac{L}{M}$ if $M\ne0$
+>
+> **Cauchy Criterion for Function**
+>
+> $\lim_{x\to a }f(x)$ exists $\iff$ for every $\epsilon >0, \exist \delta >0$ s.t. x, y $\in (a-\delta,a)\cup(a,a+\delta), $ their function values satisfy $|f(x)-f(y)|<\epsilon$
+
+<a name="10"></a>
+
+#### 10. Continuity:
 
 
-[⬆ Back to top**](#top)
+
+[**⬆ Back to top**](#top)
 
 ## Misc. Notes:
 
 ![miscform](pics/miscform.png)
+
+Useful def:
+
+![def](pics/def.png)
+
+$\N \setminus \{3\} = \{1,2,4,5,...\}$
+
+<a name="end"></a>
 
 ## Resources
 
