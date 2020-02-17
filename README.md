@@ -13,7 +13,7 @@ This course will focus on set theory and number theory (and logic)
 2. [Logic](#logic)
 3. [What is a number? (It's not what you think it is)](#number)
 4. [Induction](#induction)
-5. [Absolute values](#abs)
+5. [Absolute values and Binomial Thm](#abs)
 6. [Intervals and bounds](#inter)
 7. [Real numbers](#real)
 8. [Sequences and limits](#seq)
@@ -296,7 +296,59 @@ Steps
 
 <a name='abs'></a>
 
-#### 5. Absolute Values
+#### 5. Absolute Values and Binomial Thm
+
+Absolute value is defined to be the following:
+
+$$|x|=\left\{
+        \begin{array}{ll} x & \quad x > 0\\
+            -x & \quad x \leq 0
+        \end{array}
+    \right.$$
+
+Properties of absolute values:
+
+A1. $|x|\ge0$
+
+A2. $|x|= 0\iff x=0$
+
+A3. $|x|=|-x|$
+
+A4. $|xy|=|x||y|$
+
+A5. $If c\ge0,\ then\\|x|\le c\iff-c\le x\le x$
+
+A6. $-|x|\le x\le |x|$
+
+A7. $||x|-|y||\le |x\pm y|\le|x|+|y|$ by triangle inequality
+
+##### Binomials
+
+$n!=1\times2\times...\times(n-1)\times n$ if $n\in\N
+
+$0!=1$
+
+and
+
+$\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)...(n-k+1)}{1\times2\times...\times k }$ \* note equal to 1 if k=0
+
+Helpful Thm:
+
+* $\binom{n}{k}=\binom{n}{n-k}$
+* $\binom{n}{0}=\binom{n}{n}=1$
+* $\binom{n}{1}=\binom{n}{n-1}=n$
+* $\binom{n}{k-1}+\binom{n}{k}=\binom{n+1}{k}$
+* $\sum^{n}_{k=0}\binom{n}{k}=2^n,\ \forall n\in W$ (can be proved via induction as exercise)
+
+**Binomial Thm**:
+
+$(a+b)^n=\sum^n_{k=0}\binom{n}{k}a^{n-k}b^k$ (can also be proved by induction, see Bowmen notes page 26)
+
+![figure3lazy](pics/figure3lazy.png)
+
+<a name='Inter'></a>
+
+#### 6. Intervals and bounds
 
 
 
@@ -319,6 +371,10 @@ The rules for copy and distributing this project licence are
 outlined in the licence.txt file.
 
 This project is under an MIT licence 
+
+## Thanks
+
+Dedicated to Dr. Terry Gannon who definitely did not abandon the class
 
 
 ## Contributions
