@@ -33,7 +33,7 @@ This course will focus on set theory and number theory (and logic)
 19. [L'Hopital's Rule (Le hospital)](#hos)
 20. [Convex and concave](#con)
 21. [Exponentials and logs](#log)
-22. Logarithmic differentiation
+22. [Logarithmic differentiation](#logd)
 23. Taylor's Theorem
 24. Implicit differentiation
 25. [Misc Notes](#misc)
@@ -914,11 +914,49 @@ Conditions for applying l'Hôpital's rule:
 
 A inflection point occurs when f'' = 0
 
+* f is convex $\iff $f' is increasing on I (or f'' > 0)
+* f is concave $\iff $f' is decreasing on I (or f'' < 0)
 
+Notes:
+
+Suppose f'(c) = 0 at some $c \in I$
+
+* f'' $\ge 0 \forall x\in I$ then f has a global min at c
+* f'' $\le 0 \forall x\in I$ then f has a global max at c
+
+Suppose f is continuous on I. Then f is one-to-one on I $\iff$ f is strictly monotonic on I
+
+**More Inverses**
+
+$f^{-1}$'(y)$=\frac{1}{f'(f^{-1}(y))}$
+
+**The Horse Race Thm**
+
+Let I = [a, b] and f, g continuous on I, diff on (a, b)
+
+If a. f(a)$\ge$ f(b) and b. $f'\ge g'$ on (a,b), then c. f(b)$\ge$ g(a) 
+
+if f' > g' on (a,b) then f(b)>g(b)
 
 <a name="log"></a>
 
 #### 21. Exponentials and logs
+
+> Properties of logs
+>
+> 1. log(xy) = log x + log y
+> 2. log(x/y) = log x - log y
+> 3. log($x^r$) = r log x
+
+<a name="logd"></a>
+
+#### 22. Logarithmic differentiation
+
+> f'($e^x$) = $e^x$
+>
+> f'(lnx) = f'(log x) = $\frac{1}{x}$
+>
+> f'($x^x$) = $x^x(ln(x)+1)$
 
 
 
