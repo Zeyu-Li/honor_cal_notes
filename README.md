@@ -816,7 +816,7 @@ If $f^2$ is diff at x, f might not be diff. at x (see f=|x|)
 
 > Trig diffs:
 >
-> 1. f(x0=sinx $\to f'(0)=\lim_{x\to 0}\frac{sinx}{x}=1$ (see l'Hopital)
+> 1. f(x0=sinx $\to f'(0)=\lim_{x\to 0}\frac{sinx}{x}=1$ (see [l'Hopital](#hos))
 > 2. f(x)=sinx $\to $ f' = cosx
 > 3. f(x)=cosx $\to $ f'=-sinx
 > 4. f'(tanx) $=(secx)^2$
@@ -841,7 +841,7 @@ A local extremum exists at x if it is a local max or min at x
 
 Global extremum is f(x)=sup{f(x)} or inf{f(x)}, therefore, global extremum may not be the same as local extremum
 
-If f'=0, then a local extremum exists
+If f'=0, then a local extremum exists or is said to be a critical point
 
 <a name="roll"></a>
 
@@ -874,17 +874,45 @@ To see prove, go to page 11 on chpt 2 on class notes or pg 94 on Bowmen
 
 #### 18. First and second derivative test
 
+**First Derivative Test**
 
+Let I be an interval and f continuous on I and a $c\in I$, a critical point
+
+* If there is a relative open subinterval ($J \sub I\ and\ f' \le 0\ on\ J\cap (-\infin, c)\ and f' \le 0 \ on\ J \cap (c, \infin), then\ f$ has a local min at c
+* Likewise for local max, but flip inequalities
+
+**Second Derivative Test**
+
+Let I be an interval and f continuous on I and twice diff at x
+
+* if f'' < 0 has local max at x
+* if f'' > 0 has local min at x
+* if f'' = 0 unknown
 
 <a name="hos"></a>
 
-#### 19. L'Hopital's Rule
+#### 19. L'Hôpital's Rule
 
+L'Hôpital's rule is useful for computing division where the top and bottom might be $\pm \infin$ or 0
 
+Conditions for applying l'Hôpital's rule:
+
+* If numerator and dementor both approach 0
+* If numerator and dementor both approach $\pm \infin $
+
+> Thm:
+>
+> If it passes the previous checks, you can
+>
+> $\lim_{x\to a} \frac{f}{g}=L=\lim_{x\to a} \frac{f'}{g'}$
+
+\* See page 100 for proof
 
 <a name="con"></a>
 
 #### 20. Convex and Concave
+
+A inflection point occurs when f'' = 0
 
 
 
@@ -911,6 +939,12 @@ Useful def:
 $\N \setminus \{3\} = \{1,2,4,5,...\}$
 
 When in doubt, write ""***clearly***..." even in multiple choice, and especially for T or F questions. 
+
+**hand wavy stuff**
+
+> * $\frac{x}{\infin}\to0$ if $x\ne \pm \infin$
+> * $\frac{x}{0}\to\pm\infin $ if $x\ne 0$ and depending on x > 0 or x < 0
+> * $\frac{\pm\infin}{x}\to\pm\infin$ if $x\ne \pm \infin$
 
 <a name="end"></a>
 
