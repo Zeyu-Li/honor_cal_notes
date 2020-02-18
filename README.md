@@ -12,7 +12,6 @@ This course will focus on set theory and number theory (and logic)
 ## Index
 
 0. [Shorthand](#0)
-
 1. [Sets](#set)
 2. [Logic](#logic)
 3. [What is a number? (It's not what you think it is)](#number)
@@ -23,16 +22,16 @@ This course will focus on set theory and number theory (and logic)
 8. [Sequences and limits](#8)
 9. [Functions (and notation)](#func)
 10. [Continuity](#10)
-11. [1-sided limits](#11)
-12. Rolle's theorem
-13. Intermediate value theorem (IVT)
-14. Mean value theorem (MVT aka Meme value theorem)
-15. Differentiation
-16. First and second derivative test
-17. L'Hopital's Rule (Le hospital)
-18. Taylor's Theorem
-19. Convex and concave
-20. Inverse functions
+11. [Inverse functions](#11)
+12. [1-sided limits](#12)
+13. [Intermediate value theorem (IVT)](#ivt)
+14. [Differentiation](#diff)
+15. [Rolle's theorem](#roll)
+16. [Mean value theorem (MVT aka Meme value theorem)](#mvt)
+17. First and second derivative test
+18. L'Hopital's Rule (Le hospital)
+19. Taylor's Theorem
+20. Convex and concave
 21. Implicit differentiation
 22. Exponentials and logs
 23. Logarithmic differentiation
@@ -53,11 +52,15 @@ Thm $\to$ Theorem (will be in block quotes)
 
 s.t. $\to$ such that
 
-, or ; $\to$ such that, so (general connector depending on context)
+, or ; or : $\to$ such that, so (general connector depending on context)
 
 wLOG $\to $ without loss of generality (i.e. similar to previous case, but I'm too lazy to do it)
 
 seq. $\to$ sequence
+
+RHS $\to$ right hand side
+
+LHS $\to$ left hand side
 
 ##### Formal Logic
 
@@ -400,6 +403,13 @@ If b is the sup of $S$ and is in $S$, (i.e. $b=\sup \ S\ and\ x\in S$ ), it is s
 
 \* Infimum  is similar (wLOG)
 
+**Max/min**
+
+Now what max and min functions are (they are self explanatory, otherwise, look it up in the [python docs](https://www.geeksforgeeks.org/max-min-python/))
+
+> 1. max f $=max\{f(x)|x\in A\}$ if right hand side exists
+> 2. min f $=min\{f(x)|x\in A\}$ if right hand side exists
+
 <a name='real'></a>
 
 #### 7. Real numbers
@@ -473,8 +483,6 @@ Let $a_n, b_n$ be sequences with limit L and M
 >
 > Why? Homework question
 
-Now what max and min functions are (they are self explanatory, otherwise, look it up in the [python docs](https://www.geeksforgeeks.org/max-min-python/))
-
 > Thm:
 >
 > Convergent sequence implies bounded but not the other way
@@ -539,6 +547,14 @@ A bounded sequence has a convergent subsequence (see page 49 for proof)
 
 $\therefore\ a_n$ is convergent $\iff a_n$ is Cauchy
 
+**Revisit min/max**
+
+> ![figure8idk](pics/figure8idk.png)
+>
+> \* This is not clear so watch this: https://www.youtube.com/watch?v=khypO8MQpdc
+>
+> \* Note: $x_o$ is always a boundary point of $(x_o,\infin) \cap I\ and\ (-\infin, x_o)\cap I\ if\ x_o \in I^o$
+
 <a name='func'></a>
 
 #### 9. Functions
@@ -601,14 +617,19 @@ $f: \R_{\ge0}\to \R $ defined by f(x)$=x^2$ is different from$g:\R\to\R$ also de
 > $$
 > Special values:
 > $$
-> sin0=cos(\frac{\pi}{2})=0\\
 > sin(\pi/2)=cos0=1
 > \\sin(\pi/4)=cos(\pi/4)=1/\sqrt{2}\\
 > sinx(\pi/6)=cos(\pi/3)=1/2\\
 > sin(\pi/3)=cos(\pi/6)=\sqrt{3}/2
-> \\ cos(A-B)=cosAcosB+sinAsinB\\
+> \\ cos(A-B)=cosAcosB+sinAsinB\
+> $$
+> 
+>
+> 
+
 > $$
 > Double Angle Formulas:
+> $$
 > $$
 > sin2A=2sinAcosA\\
 > cos2A=2cos^2A-1=1-2sin^2A\\
@@ -617,7 +638,8 @@ $f: \R_{\ge0}\to \R $ defined by f(x)$=x^2$ is different from$g:\R\to\R$ also de
 > Also:\\
 > |sinx|\le |x| \ \forall x\in\R
 > $$
-> 
+
+
 
 Let I be interval s.t. $x_o$ is an accumulation point of f (see misc. notes below) (i.e. $x_o \in I\ or\ x_o \in \delta I$)
 
@@ -649,13 +671,85 @@ $\lim_{x\to x_o}f(x)=\infin $ if for every M>0, there is $\delta>0$ s.t. $\foral
 
 Simply, a function is continuous if when you draw it out, your pen/pencil does not leave the paper (sorry I have not defined what pen/pencil and paper is but that is for another course (possibly Bio 399))
 
+> Proper def: 
+>
+> Let D $\to$ R. A point c is an interior point of D if it belongs to some open interval (a, b) entirely contained in D: c $\in$ (a, b) $\sub$  D
+>
+> i.e. 1/10, 1/2, 3/4 are interior points of [0, 1], but 0 and 1 are not
+>
+> However, all points in (0, 1) are interior points of (0, 1)
 
+A point is continuous at interior point a in domain if
+$$
+\lim_{x\to a}f(x)=f(a)
+$$
+
+> f is continuous at a $\iff$ for every $\epsilon >0 , \exist \delta>0\ s.t.\\ |x-a|<\delta \to |f(x)-f(a)|<\epsilon$
+>
+> Corollary:
+>
+> a. If f and g are continuous at a, then f+g and fg are continuous at a and f/g continuous at a if $g(a)\ne 0$
+>
+> b. A rational function is continuous at all points of its domain
+>
+> c. If g is continuous at a and f is continuous at g(a). Then f $\circ $ g (i.e. f(g)) is continuous at a.
 
 <a name="11"></a>
 
-#### 11. 1-sided limits:
+#### 11. Inverse functions
+
+Take $f:X\to Y$, then f is **invertible** if there is a $g:Y\to X$ s.t. f(g(y))=y $\forall \ y \in Y$ and g(f(x))=x $\forall \ x \in X$. The function g is unique if it exists.
+
+The inverse of f is invertible and it is written as $f^{-1}$, but this is a bit ambiguous in some cases, so be careful.
+
+> Take $f:X\to Y$
+>
+> 1. f is **injective** (or 1-1 or one-one) if $x=x_o$ then $f(x)=f(x_o)$
+> 2. f is called **surjective** (onto) if f(X)=y (i.e. $y\in Y$ there is $x\in X\ s.t.\ f(x)=y$
+> 3. f is bijective (one-to-one) if both injective and surjective
+>
+> Notes: 
+>
+> *  f is injective, if for every 𝑦 $\in$ 𝑌 the equation 𝑓(𝑥) = 𝑦 has at most one solution (but may have none)
+>   * ie $\forall x, x_o:f(x_o)=f(x)\to x=x_o$
+> * f is surjective, if for every 𝑦 $\in$ 𝑌 the equation 𝑓(𝑥) = 𝑦 has at least one solution (which may not necessarily be unique)
+>   * ie $\forall y:\exist x:f(x)=y$
+> * f is bijective, if for every 𝑦 $\in$ 𝑌 the equation 𝑓(𝑥) = 𝑦 has a unique solution
+>   * ie $\forall y:\exist! x:f(x)=y$
+
+Therefore, f is invertible $\iff$ it is **bijective**
+
+Let f be continuous. If f is injective, f is strictly monotone on I; J = f(I) is an interval of the same type and $f^{-1}:J\to I $ is continuous
+
+<a name="12"></a>
+
+#### 12. 1-sided limits:
+
+$\lim_{x\to a^+}f(x)=L$ if for each $\epsilon>0, \exist \ \delta>0, s.t.\\ 0<x-a<\delta \to |f(x)-L|<\epsilon$
+
+Likewise for $x\to a^-$
+
+If the limit exists above, then it is said to be continuous from the right
+
+<a name="ivt"></a>
+
+#### 13. Intermediate Value Theorem (IVT)
+
+If a is continuous on [a,b] and f(a)<0<f(b)
+
+then $\exist$ a number $c\in (a,b)\ s.t.\ f(c)=0$
+
+<a name="diff"></a>
+
+#### 14. Differentiation
 
 
+
+<a name="roll"></a>
+
+#### 15. Rolle's theorem
+
+if f is continuous on [a, b], 
 
 [**⬆ Back to top**](#top)
 
@@ -670,6 +764,8 @@ Useful def:
 ![def](pics/def.png)
 
 $\N \setminus \{3\} = \{1,2,4,5,...\}$
+
+When in doubt, write ""***clearly***..." even in multiple choice, and especially for T or F questions. 
 
 <a name="end"></a>
 
