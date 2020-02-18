@@ -26,17 +26,18 @@ This course will focus on set theory and number theory (and logic)
 12. [1-sided limits](#12)
 13. [Intermediate value theorem (IVT)](#ivt)
 14. [Differentiation](#diff)
-15. [Rolle's theorem](#roll)
-16. [Mean value theorem (MVT aka Meme value theorem)](#mvt)
-17. First and second derivative test
-18. L'Hopital's Rule (Le hospital)
-19. Taylor's Theorem
-20. Convex and concave
-21. Implicit differentiation
-22. Exponentials and logs
-23. Logarithmic differentiation
-24. [Misc Notes](#misc)
-25. [Resources](#end)
+15. [Extrema](#ext)
+16. [Rolle's theorem](#roll)
+17. [Mean value theorem (MVT aka Meme value theorem)](#MVT)
+18. [First and second derivative test](#der)
+19. [L'Hopital's Rule (Le hospital)](#hos)
+20. [Convex and concave](#con)
+21. [Exponentials and logs](#log)
+22. Logarithmic differentiation
+23. Taylor's Theorem
+24. Implicit differentiation
+25. [Misc Notes](#misc)
+26. [Resources](#end)
 
 
 
@@ -50,6 +51,8 @@ Ex. $\to$ example
 
 Thm $\to$ Theorem (will be in block quotes)
 
+Def $\to$ definition
+
 s.t. $\to$ such that
 
 , or ; or : $\to$ such that, so (general connector depending on context)
@@ -57,6 +60,8 @@ s.t. $\to$ such that
 wLOG $\to $ without loss of generality (i.e. similar to previous case, but I'm too lazy to do it)
 
 seq. $\to$ sequence
+
+diff. $\to $ differentiable
 
 RHS $\to$ right hand side
 
@@ -681,7 +686,7 @@ Simply, a function is continuous if when you draw it out, your pen/pencil does n
 
 A point is continuous at interior point a in domain if
 $$
-\lim_{x\to a}f(x)=f(a)
+\lim_{x\to a}f(x)=f(a)
 $$
 
 > f is continuous at a $\iff$ for every $\epsilon >0 , \exist \delta>0\ s.t.\\ |x-a|<\delta \to |f(x)-f(a)|<\epsilon$
@@ -743,13 +748,151 @@ then $\exist$ a number $c\in (a,b)\ s.t.\ f(c)=0$
 
 #### 14. Differentiation
 
+Differentiation is a measure of the rate of change (or slope, but that's a bad word in AP cal) of a function
 
+The idea is given by a rate of change formula:
+$$
+v(t) = \frac{\Delta x}{\Delta t} 
+\\  
+$$
+The exact velocity is when $\Delta t = t-t_o$ is taken when the difference is smaller and smaller (ie $\lim_{t\to t_o}$) and the same for $\Delta x$
+$$
+\therefore \ v(t_o)=\lim_{t\to t_o}\frac{x(t)-x(t_o)}{t-t_o}
+$$
+
+> Proper def:
+>
+> Let I be interval s.t. f is defined on that interval (that means is it must be continuous near $x_o $). f is differentiable at $x_o\in I$ if
+>
+> $\lim_{x\to x_o}\frac{f(x)-f(x_o)}{x-x_o}=f'(x) =f'$
+>
+> OR
+>
+> f'(x)$=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$ is finite and exists
+>
+> OR
+>
+> $\exist$ c=f'(x) s.t. f(x+h)=f(x)+ch+r(h) and $\lim_{h\to 0}\frac{r(h)}{h}=0$
+>
+> \* notion can also be like the following:
+>
+> * $\frac{df}{dx}(x_o)$
+> * $\frac{d}{dx}|_{x_o}$
+
+
+
+> Useful:
+>
+> 1. Any constant function is differentiable everywhere it is defined, and its derivative is 0
+> 2. Any linear function is differentiable everywhere: f(x)=mx+b, then f'($x_o $) = m
+> 3. f(x) = $x^n \to$ f'(x)$=n(x)^{n-1}$
+> 4. if f=|x|, then f' is defined everywhere except x=0
+> 5. In the previous function, if the domain is bounded by either $x\le0\ or\ x\ge0$, then it is defined
+>
+> Rule on diff.
+>
+> * f+g diff on x $\to (f+g)'(x)=f'(x)+g('x')$
+> * fg diff at x $\to (fg)'(x)=f'(x)g(x)+f(x)g'(x) $ (Product or Leibniz Rule)
+> * g(x)$\ne 0 \forall x\in I, \to \frac{f}{g}$ diff. and $\\(\frac{f}{g})'=\frac{f'g-fg'}{g^2}$ (Quotient Rule)
+> * f(g(x)) = h(x) $\to h'=f'(g)g'$ (h must be defined at point and exist at point and same for g and f. Also f and g must be differentiable)
+>
+> To see proof, goto page 85
+
+\* Note, any polynomial function is diff. everywhere
+
+For any natural number n we say 𝑓 is n-times differentiable at x if:
+1. $f^{(n-1)}$ is defined on a relative open interval containing 𝑥.
+2. $f^{(n-1)}$ is differentiable at x
+
+A function is called smooth if it is n times differentiable everywhere in its domain for every n
+
+Therefore, know that all polynomial function (and trig. functions) are smooth everywhere
+
+Any rational function is also diff. everywhere in its domain
+
+==Important Oversights==
+
+If $f^2$ is diff at x, f might not be diff. at x (see f=|x|)
+
+> Trig diffs:
+>
+> 1. f(x0=sinx $\to f'(0)=\lim_{x\to 0}\frac{sinx}{x}=1$ (see l'Hopital)
+> 2. f(x)=sinx $\to $ f' = cosx
+> 3. f(x)=cosx $\to $ f'=-sinx
+> 4. f'(tanx) $=(secx)^2$
+> 5. f'(secx)=secx tanx
+> 6. f'(csc x) = -csc x cot x
+> 7. f'(cotx)=$- (csc x)^2$
+>
+> Inverses
+>
+> ![figure9trigin](pics/figure9trigin.png)
+
+<a name="ext"></a>
+
+#### 15. Extrema
+
+Let f be diff on $x\in I \to$ f has a
+
+* local max at x if for $some\ \delta>0, s.t. \forall x_o\in I\cap(x_o-\delta, x_o+\delta):f(x_o)\le f(x)$
+* local min at x if for $some\ \delta>0, s.t. \forall x_o\in I\cap(x_o-\delta, x_o+\delta):f(x_o)\ge f(x)$
+
+A local extremum exists at x if it is a local max or min at x
+
+Global extremum is f(x)=sup{f(x)} or inf{f(x)}, therefore, global extremum may not be the same as local extremum
+
+If f'=0, then a local extremum exists
 
 <a name="roll"></a>
 
-#### 15. Rolle's theorem
+#### 16. Rolle's theorem
 
-if f is continuous on [a, b], 
+if f is continuous on [a, b] and diff on at least (a,b), s.t. f(a)=f(b), then, $\exist c\in (a,b), s.t. f'(c)=0$
+
+This means that if the points a, b are equal on f, then in-between a and b, there is a least one point such that the derivate is 0
+
+<a name="MVT"></a>
+
+#### 17. MVT
+
+if f is continuous on [a, b] and diff on at least (a,b), then, $\exist c\in (a,b), s.t. f(b)-f(a)=f'(c)(b-a)$
+
+To see prove, go to page 11 on chpt 2 on class notes or pg 94 on Bowmen
+
+> Corollary:
+>
+> zero derivative means constant
+>
+>  
+>
+> Let f be continuous on I and diff on at least the interior of I
+>
+> * f is monotone increasing $\iff$ f' $\ge 0$ on I
+> * f is monotone decreasing $\iff$ f' $\le 0$ on I
+
+<a name="der"></a>
+
+#### 18. First and second derivative test
+
+
+
+<a name="hos"></a>
+
+#### 19. L'Hopital's Rule
+
+
+
+<a name="con"></a>
+
+#### 20. Convex and Concave
+
+
+
+<a name="log"></a>
+
+#### 21. Exponentials and logs
+
+
 
 [**⬆ Back to top**](#top)
 
@@ -762,6 +905,8 @@ if f is continuous on [a, b],
 Useful def:
 
 ![def](pics/def.png)
+
+![relopen](pics/relopen.png)
 
 $\N \setminus \{3\} = \{1,2,4,5,...\}$
 
