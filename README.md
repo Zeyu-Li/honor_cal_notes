@@ -34,10 +34,16 @@ This course will focus on set theory and number theory (and logic)
 20. [Convex and concave](#con)
 21. [Exponentials and logs](#log)
 22. [Logarithmic differentiation](#logd)
-23. Taylor's Theorem
-24. Implicit differentiation
-25. [Misc Notes](#misc)
-26. [Resources](#end)
+23. [Series](#ser)
+24. [Geometric Series](#geo)
+25. [Ratio, Root and Compression Tests](#tests)
+26. [Dirichlet's and Leibniz Rule](#rich)
+27. [Rearranging Series](#rearr)
+28. [Power Series](#power)
+29. [Taylor Series](#taylor)
+30. [Integration](#integra)
+31. [Misc Notes](#misc)
+32. [Resources](#end)
 
 
 
@@ -828,6 +834,12 @@ If $f^2$ is diff at x, f might not be diff. at x (see f=|x|)
 >
 > ![figure9trigin](pics/figure9trigin.png)
 
+**Chain Rule**
+
+Chain rule states that:
+
+$(f\circ g)'(x) = f'(g(x))g'(x)$
+
 <a name="ext"></a>
 
 #### 15. Extrema
@@ -908,13 +920,25 @@ Conditions for applying l'Hôpital's rule:
 
 \* See page 100 for proof
 
+**Cauchy Mean Value Theorem**
+
+Let f, g be continuous on [a, b] and diff. on (a, b). There is $c\in (a,b)$ s.t.
+$$
+f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a))
+$$
+if $g'(x)\ne 0$ on (a, b), then
+$$
+\frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}
+$$
+
+
 <a name="con"></a>
 
 #### 20. Convex and Concave
 
 A inflection point occurs when f'' = 0
 
-* f is convex $\iff $f' is increasing on I (or f'' > 0)
+* f is convex $\iff $f' is increasing on I (or f'' > 0) (ie $e^x$ (prove as an exercise))
 * f is concave $\iff $f' is decreasing on I (or f'' < 0)
 
 Notes:
@@ -942,11 +966,21 @@ if f' > g' on (a,b) then f(b)>g(b)
 
 #### 21. Exponentials and logs
 
+The unique exponential function f with f' = f is called the exponential function and often denoted exp. Its base is denoted $e$
+
+*Note $exp(x) = e^x$ and
+
+All exponential converges (and E(x) absolutely convergent)
+
+$E(x) = \sum_{n=0}^{\infin}\frac{1}{n!}x^n$
+
+The inverse of exp is natural logarithm function
+
 > Properties of logs
 >
-> 1. log(xy) = log x + log y
-> 2. log(x/y) = log x - log y
-> 3. log($x^r$) = r log x
+> 1. $\log(xy) = \log x + \log y$
+> 2. $\log(x/y) = \log x - \log y$
+> 3. $\log(x^r) = r \log x$
 
 <a name="logd"></a>
 
@@ -958,7 +992,129 @@ if f' > g' on (a,b) then f(b)>g(b)
 >
 > f'($x^x$) = $x^x(ln(x)+1)$
 
+<a name="ser"></a>
 
+#### 23. Series
+
+"A series is nothing but a very special form of sequence" - Kuttler
+
+Take any sequence $a_n$. It is possible to form the associated series:
+
+$\sum_{n=1}^{\infin}a_n$
+
+*Note:
+$$
+\sum_{n=1}^{\infin}a_n := \lim_{n\to \infin} \sum_{i=1}^{n}a_i
+$$
+The series is **convergent** if the limit exists and is finite, otherwise, **divergent**
+
+A partial sum is a part of the series
+
+$S_N = \sum_{n=1}^{N}a_n$
+
+**Remember**, the partial sum has limit same as the series
+
+
+
+The **harmonic series** $\sum_{n=1}^{\infin}\frac{1}{n}$ diverges to $\infin$
+
+
+
+> Def.
+>
+> A series $\sum_{n=1}^{\infin}a_n$ is convergent $\iff$ for every $\epsilon>0, $ there is $N_o \in \N$ s.t $\forall n,m>N_o,$ $|\sum_{k=m}^{n}a_n|<\epsilon$
+>
+> A series $\sum_{n=1}^{\infin}a_n$ is absolutely convergent if the series $\sum_{n=1}^{\infin}|a_n|$ is converges
+>
+> 
+
+<a name="geo"></a>
+
+#### 24. Geometric Series
+
+$a+ar+ar^2+...= \sum_{k=0}^{\infin}ar^k=\frac{a}{1-r},$ for $|r| < 1$
+
+> If $a\ne 1,$ $\sum_{n=0}^{N}a^n=\frac{a^{N+1}}{a-1}$
+>
+> $\sum_{n=0}^{\infin}a^n$ converges $\iff$ $|a|<1$
+
+<a name="tests"></a>
+
+#### 25. Ratio, Root and Compression Tests
+
+**Ratio Test**
+
+Take $\sum_{n=1}^{\infin}a_n$, where $a_n\ne 0$ for large enough n
+
+Suppose A = $\lim_{n\to \infin} \frac{a_{n+1}}{a_n}$ exists then
+
+* $|A| <1$, series converges
+* $|A| =1$, no general statement
+* $|A| >1$,  or $R = \pm \infin$, the series diverges
+
+**Root Test**
+
+Take $\sum_{n=1}^{\infin}a_n$ be a series and suppose $a_n\ge 0.$ Let $L=\limsup (a_n)^{1/n}$
+
+* L < 1, the series converges
+* L > 1, the series diverges
+* L = 0, no general statement can be made
+
+**Compression Tests**
+
+Suppose $a_n \ge 0$ is monotone decreasing. $\sum_{n=1}^{\infin}a_n\ converges \iff \sum_{n=0}^{\infin}a_{2^n}2^n$ converges
+
+
+
+Take bounded series $\sum_{n=1}^{\infin}a_n$, then the partial sums are bounded. A sequence $a_n$ is called **bounded variation** if series $\sum_{n=1}^{\infin}|a_{n+1}-a_n|$ converges
+
+*Note:
+
+If bounded, then convergent
+
+<a name="rich"></a>
+
+#### 26. Dirichlet's and Leibniz Rule
+
+**Dirichlet's Rule**
+
+Take bounded series $\sum_{n=1}^{\infin}a_n$ and $b_n$ be monotone seq. with limit 0. Then $\sum_{n=1}^{\infin}a_n b_n$ converges
+
+Prove in chapter 3, page 6 of notes
+
+**Leibniz Rule**
+
+Let $a_n\ge0$ be a montone decreasing seq with limit 0.
+
+Then $\sum_{n=1}^{\infin}(-1)^na_n$ converges
+
+Proof: it is a bounded series and follows Dirichlet's Rule, QED.
+
+<a name="rearr"></a>
+
+#### 27. Rearranging Series
+
+Take $\sum_{n=1}^{\infin}a_n$. 
+
+<a name="power"></a>
+
+#### 28. Power Series
+
+
+
+<a name="taylor"></a>
+
+#### 29. Taylor Series
+
+A Taylor Series is like an approximation to the original. (Check out [3Blue1Brown](https://www.youtube.com/watch?v=3d6DsjIBzJ4))
+
+
+
+<a name="integra"></a>
+
+#### 30. Integration
+
+Also known as the antiderivative. 
 
 [**⬆ Back to top**](#top)
 
@@ -983,6 +1139,8 @@ When in doubt, write ""***clearly***..." even in multiple choice, and especially
 > * $\frac{x}{\infin}\to0$ if $x\ne \pm \infin$
 > * $\frac{x}{0}\to\pm\infin $ if $x\ne 0$ and depending on x > 0 or x < 0
 > * $\frac{\pm\infin}{x}\to\pm\infin$ if $x\ne \pm \infin$
+
+> $\lim_{x\to \infin} x^n = \lim_{x\to 0} x^{1/n}$
 
 <a name="end"></a>
 
