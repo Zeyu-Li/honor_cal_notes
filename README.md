@@ -39,11 +39,12 @@ This course will focus on set theory and number theory (and logic)
 25. [Ratio, Root and Compression Tests](#tests)
 26. [Dirichlet's and Leibniz Rule](#rich)
 27. [Rearranging Series](#rearr)
-28. [Power Series](#power)
-29. [Taylor Series](#taylor)
-30. [Integration](#integra)
-31. [Misc Notes](#misc)
-32. [Resources](#end)
+28. [Double Seq.](#dseq)
+29. [Power Series](#power)
+30. [Taylor Series](#taylor)
+31. [Integration](#integra)
+32. [Misc Notes](#misc)
+33. [Resources](#end)
 
 
 
@@ -1094,25 +1095,135 @@ Proof: it is a bounded series and follows Dirichlet's Rule, QED.
 
 #### 27. Rearranging Series
 
-Take $\sum_{n=1}^{\infin}a_n$. 
+Take S =  $\sum_{n=1}^{\infin}a_n$. We say a **rearrangement** or **reordering** of the series S is a series of form $S_\sigma := \sum_{n=1}^{\infin}a_{\sigma(n)}$ where $\sigma: \N \to \N$ is a bijection. In this context often also called a **permutation**.
+
+
+
+Also:
+
+![fig10](pics/fig10.png)
+
+
+
+If series S is absolutely convergent, then any rearrangement is as well. Also the limits will be the same.
+
+If $a_n \ge 0$ is a seq. s.t. $\sum_{n=1}^{\infin}a_n = \infin$, then any reordering has the same limit
+
+
+
+**Rearrangement Thm.**
+
+Take the same S a above and let it be convergent but not absolutely convergent. For any $L\in \R$, t. is a permutation $\sigma$ s.t. $S_\sigma$ has limit L. (ie, you can get any number if you rearrange it)
+
+*See page 9 in chapter 3 review
+
+<a name="dseq"></a>
+
+#### 28. Double Seq.
+
+A sum of two series is another series. A product of series is an infinite series of the original two series. This an be represented by a matrix
+
+An infinite series converges absolutely if both original series converge absolutely (also the limit is the limit of the product of the two series)
+
+A double seq. is a function $a:\N \times \N \to \R$, s.t. for each $m,n \in \N$, $a_{m,n} = a(m,n)$. Sometimes the indices are allowed to be 0 or bounded negative. a double seq.  $a_{m,n}$ is bounded if t. is bounded if t. is $B>0$ s.t. $| a_{m,n}|<B\ \forall\ m,n$
+
+As in the case of regular sequences, one can add double sequences and multiply them by constants, both in the obvious ways (so they form a vector space)
+
+![fig11double](pics/fig11double.png)
+
+Let $a_{m,n}$ be a double seq. with limit $L\in \R\cup \{\pm \infin\}$. Suppose row limits exist and are finite (we want the sequence of row limits to be a proper sequence) for almost all i. Let $L_i$ be the ith row limit. Then $lim_{i\to \infin} L_i=L$; similar for column limits
+
+Let $a_{m,n}$ be a double seq. It is monotone increasing $\forall \ m_o,n_o$ we have $a_{m_on_o}\le a_{m,n}$ whenever $m>m_o\ and\ n>n_o.$ $a_{m,n}$ is monotone decreasing if double seq. $-a_{m,n}$ is monotone increasing. 
+
+> **Lemma:**
+>
+> A monotone and bounded double sequence converges
+>
+> ![fig12dseries](pics/fig12dseries.png)
+>
+> See chapter 3, page 15 for proof
+>
+> Lemma 2:
+>
+> $\sum_{m,n=1}^{\infin}a_{m,n} = \sum_{m=1}^{\infin}\sum_{n=1}^{\infin}a_{m,n}$ (likewise if row and column change, $\therefore \ \sum_{n=1}^{\infin}\sum_{m=1}^{\infin}a_{m,n}= \sum_{m=1}^{\infin}\sum_{n=1}^{\infin}a_{m,n}$)
 
 <a name="power"></a>
 
-#### 28. Power Series
+#### 29. Power Series
 
+A formal series is centered at $c\in \R$ is a seq. $a_n$ written as $\sum_{n=0}^\infin a_n(x-c)$. It **converges** at $x_o\in \R$ if  $\sum_{n=0}^\infin a_n(x-c)^n$ converges. Diverges otherwise.
 
+*Note that it is possible that a formal power series doesn’t converge anywhere except c.
+
+Let $L:= \limsup_{n\to \infin} (|a_n|)^{1/n}. $ Then $f(x_o)$ converges $\forall$ $x_o\ with\ |x_o-c|< 1/L$ and diverges for all $x_o$ with  $|x_o-c|> 1/L$ 
+
+For formal power series f, its **radius of convergence** is defined as 1/L. It is $\infin\ if\ L=0$, and 0 if $L=\infin$. 
+
+> Examples
+>
+> * radius of f(x) = exp(x) is $\infin$
+> * radius of geometric series $\sum_{n=0}^{\infin}x^n$ is 1
+> * radius of series $\sum_{n=0}^{\infin}n!x^n$ is 0
+>
+> More examples on page 17 on notes
+
+> Fact:
+>
+> For $a_n \ge 0$, $k\in \N$,
+>
+> $\limsup_{n\to \infin} (a_{n\pm k})^{1/n} = \limsup_{n\to \infin} (a_{n})^{1/n} $
+
+Shifted series have the same radius of convergence
+
+Also for a formal power series centered at c, with radius R > 0, f is continuous and diff. at $x_o$= c. 
+
+> Lemma
+>
+>  $f=\sum_{n=0}^{\infin}a_n x^n$, then $D(f):=\sum_{n=0}^{\infin}(n+1)a_{n+1} x^n$ is called the formal derivative of f
+>
+> Also f is smooth on (c-R, c+R) and $f^{(n)}$ is again a power series namely $D^n(f)$ and $a_n=\frac{1}{n!}D^n(f)(c)$
+
+Let I be an open interval, and f a function defined on I. We say that f is analytic at $c \in I$, if there is a formal power series g centred at c convergent on an interval $(c-\delta, c+\delta)\sub I$ for some $\delta$ > 0, such that f(x)=g(x) on $(c-\delta, c+\delta)$. We say 𝑓 is analytic if that holds for every $c\in I $.
+
+![fig13trans](pics/fig13trans.png)
+
+Let f, g be 2 power series centered at c, both convergent on the same nonempty interval I containing c. Then f = g $\iff$ f($x_o$) = g($x_o$) for all $x_o \in I$
+
+Let f(x), g(x) be power series centered at c, convergent on interval I = (c-R, c+R). Let $x_n \ne c\in I$ be any seq. s.t. $\lim_{n\to \infin} x_n = c$. If f($x_n$) = g($x_n$) for all n, then f(x) = g(x)
 
 <a name="taylor"></a>
 
-#### 29. Taylor Series
+#### 30. Taylor Series
 
 A Taylor Series is like an approximation to the original. (Check out [3Blue1Brown](https://www.youtube.com/watch?v=3d6DsjIBzJ4))
 
+> (General Rolle’s Theorem:
+>
+> ![fig14grt](pics/fig14grt.png)
+
+Take f in I, let $c\in I^o$. If f is n-times diff. at c, then the polynomial $P_{f,n,c}(x)=f(c)+f'(c)(x-c)+1/2f''(c)(x-c)^2+...+1/n!f^{(n)}(c)(x-c)^n$ is called the **degree n Taylor polynomial** of f at c. The polynomials are often called the **Taylor expansions** of f at c
+
+> Thm.
+>
+> Suppose f is n times continuously diff. on I = [a,b] and $f^{(n+1)}$ exists on at least (a,b). For every $u\in [a,b)$ t. is d strictly between u and b s.t.
+> $$
+> f(u)-P_{f,n,c}(u)=\frac{(u-c)^{n+1}}{(n+1)!}f^{n+1}(d)
+> $$
+> For n = 0, it is similar to MVT
+
+The error term ($\frac{(u-c)^{n+1}}{(n+1)!}f^{n+1}(d)$) is often called **the Lagrange remainder**
+
+for u close to c
 
 
+
+Take f in I, let $c\in I^o$, s.t. $f^{(n)}(c)$ exists for all $n\in \N$, then **Taylor series** of f at c is the formal power series:
+$$
+T_{f,c}(x)=\sum_{n=0}^\infin \frac{f^{(n)}(c)}{n!}(x-c)^n
+$$
 <a name="integra"></a>
 
-#### 30. Integration
+#### 31. Integration
 
 Also known as the antiderivative. 
 
