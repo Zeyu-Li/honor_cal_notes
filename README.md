@@ -43,8 +43,9 @@ This course will focus on set theory and number theory (and logic)
 29. [Power Series](#power)
 30. [Taylor Series](#taylor)
 31. [Integration](#integra)
-32. [Misc Notes](#misc)
-33. [Resources](#end)
+32. [The Riemann Integral](#rie)
+33. [Misc Notes](#misc)
+34. [Resources](#end)
 
 
 
@@ -1225,7 +1226,116 @@ $$
 
 #### 31. Integration
 
-Also known as the antiderivative. 
+Also known as the antiderivative because it is the inverse of differentiation. It is analogue for a infinite sum. 
+
+> Def. 
+>
+> note $F' = f$ from now on
+>
+> Take f in interval I. Then the function $F'=f, F:I\to \R$ is called the antiderivative or indefinite integral of f
+>
+> Take f, gL $I\in \R$ and suppose F, G exists
+>
+> For any a,b $\in \R$, $\int (af+bg)=a\int f+b\int g$
+>
+> **Integration by Parts**
+>
+> $\int Fg=FG-\int fG$
+>
+> **Substitution Rule**
+>
+> Take function h with antiderivative H in J, s.t. $G(I)\sub J$. Then $\int (h\circ G)g=H\circ G$ (*note g = G')
+>
+> ![fig15sub](pics/fig15sub.png)
+
+
+
+<a name="rie"></a>
+
+#### 32. The Riemann Integral
+
+**Partitions**
+
+A partition P if I = [a,b] is a finite ordered seq. $a < x_1 < x_2 < ... < x_n < b$ of ordered elements of I. P is just a finite ordered subset of I. P is allowed to be empty. $n$ is the size of P and is denoted as $|P| \ or\ \#P$. $x_o=a$ and $x_{n+1}=b$. The max interval size is $max\{x_{i+1}-x_i|i=0,1,2,...,n\}$ is called mesh size of P (m(P)). $\Pi (I)\ or\ \Pi (a,b)$ for the set of all partitions of I.
+
+Partition P and its elements are denoted like the following: $x_1<x_2<...$. Partitions of I can be partially ordered by putting $P\le Q\ if \ P\sub Q$. We call Q a refinement of P.
+
+If P, Q are any two partitions of I, then $P \cup Q$ is a **common refinement** $P,Q \le P\cup Q$
+
+**Riemann Sums**
+
+> Def.
+>
+> Let I = [a,b] and P = $x_1<x_2<...<x_n\in \Pi (I)$ be any partition of size $n\ge 0$. A **tag vector** for P is the element y = $(y_o, y_1,...y_n)\in \R ^{n+1}$ s.t.
+> $$
+> a =x_o\le y_o \le x_1 \le y_1 \le ... \le x_n \le y_n \le x_{n+1} =b
+> $$
+> OR $y_i \in [x_i,x_{i+1}]$, we write T(P) for the set of all tag-vectors
+>
+> For $f: I\to \R , P\in \Pi(I)$, and $y\in T(P)$, we define the corresponding **Riemann sum:**
+> $$
+> S(P,y,f) := \sum_{i=0}^{|P|}f(y_i)(x_{i+1}-x_i)
+> $$
+
+> 
+> A Remann seq. for f is seq of form $S(P_n,y_n,f)$ where $\lim_{n\to \infin}m(P_n)=0$
+
+**Riemann Integral**
+
+Take f:[a,b]$\in \R$ where a<b $\in \R$. f is **Riemann integrable or R-integrable or integrable** if every Remann seq. for f converges. The set of integrable func. on [a,b] is denoted $\mathscr{R} [a,b]$
+
+> Lemma:
+>
+> Suppose f is integrable on [a,b], then all Reimann seq. have the same limit
+>
+> *see page 5 chapter 4 for proof
+>
+> Def.
+>
+> Suppose f is integrable on [a,b]. The **Riemann integral** or f on [a,b] is defined to be the common limit of of its Riemann seq. or:
+> $$
+> \int_a^bf\ or\ \int_a^bf dx\ or\ \int_a^b fdx
+> 
+> $$
+
+**Fundamental Theorem of Calculus (Part I)**
+
+Let $F:[a,b]\to \R$ be conti. f and diff. on at least (a,b). Also suppose t. $f:[a,b]\to \R$ s.t.
+
+1. f is integrable or conti.
+2. f agrees with F' on at least (a,b)
+
+Then $F(b)-F(a)=\int_a^bf(x)dx$
+
+> Def. 
+>
+> Take I interval and f on I. f is called **uniform continuous** if $\forall\ \epsilon >0 t.\ is \ \delta>0\ s.t.\ \forall x,y\in I\ with\ |x-y|<\delta , then \ |f(x)-f(y)|<\epsilon$
+>
+> Uniform continuous functions are obviously continuous. The converse is not always true. But it is true if the interval is closed and bounded
+
+> Thm.
+>
+> Take I = [a,b] be a **closed** bounded interval. If f is continuous f on I, then uniform conti.
+>
+> **Note:
+>
+> The theorem does not make any statement about cases where F' is not integrable. There are functions with non-integrable derivative. Conversely, even if a function is integrable it need not have an antiderivative. This is an unlimited source of mistakes
+
+If f is integrable on [a,b] and has antiderivative F, it can be written as $[F]_a^b$ for F(b) - F(a)
+
+**Linearity of Integration**
+
+Suppose f,g:[a,b]$\to \R$ are integrable, then cf+dg is integrable for c,d are constants
+$$
+\int_a^bcf(x)+dg(x)dx=c\int^b_af(x)dx+d\int_a^bf(x)dx
+$$
+ **Integrable functions are bounded**
+$$
+\mathscr{R}[a,b]\sub \mathscr{B}[a,b]
+$$
+ie. every integrable function on [a,b] is bounded
+
+See page 8 on chapter 4 class notes for proof
 
 [**⬆ Back to top**](#top)
 
