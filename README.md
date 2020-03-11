@@ -970,7 +970,7 @@ if f' > g' on (a,b) then f(b)>g(b)
 
 The unique exponential function f with f' = f is called the exponential function and often denoted exp. Its base is denoted $e$
 
-*Note $exp(x) = e^x$ and
+**Note $exp(x) = e^x$ and
 
 All exponential converges (and E(x) absolutely convergent)
 
@@ -1004,7 +1004,7 @@ Take any sequence $a_n$. It is possible to form the associated series:
 
 $\sum_{n=1}^{\infin}a_n$
 
-*Note:
+**Note:
 $$
 \sum_{n=1}^{\infin}a_n := \lim_{n\to \infin} \sum_{i=1}^{n}a_i
 $$
@@ -1056,7 +1056,7 @@ Suppose A = $\lim_{n\to \infin} \frac{a_{n+1}}{a_n}$ exists then
 
 **Root Test**
 
-Take $\sum_{n=1}^{\infin}a_n$ be a series and suppose $a_n\ge 0.$ Let $L=\limsup (a_n)^{1/n}$
+Take $\sum_{n=1}^{\infin}a_n$ be a series and suppose $a_n\ge 0.$ Let $L=\limsup (|a_n|)^{1/n}$
 
 * L < 1, the series converges
 * L > 1, the series diverges
@@ -1070,7 +1070,7 @@ Suppose $a_n \ge 0$ is monotone decreasing. $\sum_{n=1}^{\infin}a_n\ converges \
 
 Take bounded series $\sum_{n=1}^{\infin}a_n$, then the partial sums are bounded. A sequence $a_n$ is called **bounded variation** if series $\sum_{n=1}^{\infin}|a_{n+1}-a_n|$ converges
 
-*Note:
+**Note:
 
 If bounded, then convergent
 
@@ -1154,7 +1154,7 @@ Let $a_{m,n}$ be a double seq. It is monotone increasing $\forall \ m_o,n_o$ we 
 
 A formal series is centered at $c\in \R$ is a seq. $a_n$ written as $\sum_{n=0}^\infin a_n(x-c)$. It **converges** at $x_o\in \R$ if  $\sum_{n=0}^\infin a_n(x-c)^n$ converges. Diverges otherwise.
 
-*Note that it is possible that a formal power series doesn’t converge anywhere except c.
+**Note that it is possible that a formal power series doesn’t converge anywhere except c.
 
 Let $L:= \limsup_{n\to \infin} (|a_n|)^{1/n}. $ Then $f(x_o)$ converges $\forall$ $x_o\ with\ |x_o-c|< 1/L$ and diverges for all $x_o$ with  $|x_o-c|> 1/L$ 
 
@@ -1184,7 +1184,7 @@ Also for a formal power series centered at c, with radius R > 0, f is continuous
 >
 > Also f is smooth on (c-R, c+R) and $f^{(n)}$ is again a power series namely $D^n(f)$ and $a_n=\frac{1}{n!}D^n(f)(c)$
 
-Let I be an open interval, and f a function defined on I. We say that f is analytic at $c \in I$, if there is a formal power series g centred at c convergent on an interval $(c-\delta, c+\delta)\sub I$ for some $\delta$ > 0, such that f(x)=g(x) on $(c-\delta, c+\delta)$. We say 𝑓 is analytic if that holds for every $c\in I $.
+Let I be an open interval, and f a function defined on I. We say that f is analytic at $c \in I$, if there is a formal power series g centered at c convergent on an interval $(c-\delta, c+\delta)\sub I$ for some $\delta$ > 0, such that f(x)=g(x) on $(c-\delta, c+\delta)$. We say 𝑓 is analytic if that holds for every $c\in I $.
 
 ![fig13trans](pics/fig13trans.png)
 
@@ -1198,7 +1198,7 @@ Let f(x), g(x) be power series centered at c, convergent on interval I = (c-R, c
 
 A Taylor Series is like an approximation to the original. (Check out [3Blue1Brown](https://www.youtube.com/watch?v=3d6DsjIBzJ4))
 
-> (General Rolle’s Theorem:
+> General Rolle’s Theorem:
 >
 > ![fig14grt](pics/fig14grt.png)
 
@@ -1208,7 +1208,7 @@ Take f in I, let $c\in I^o$. If f is n-times diff. at c, then the polynomial $P_
 >
 > Suppose f is n times continuously diff. on I = [a,b] and $f^{(n+1)}$ exists on at least (a,b). For every $u\in [a,b)$ t. is d strictly between u and b s.t.
 > $$
-> f(u)-P_{f,n,c}(u)=\frac{(u-c)^{n+1}}{(n+1)!}f^{n+1}(d)
+> f(u)-P_{f,n,c}(u)=\frac{(u-c)^{n+1}}{(n+1)!}f^{(n+1)}(d)
 > $$
 > For n = 0, it is similar to MVT
 
@@ -1244,7 +1244,7 @@ Also known as the antiderivative because it is the inverse of differentiation. I
 >
 > **Substitution Rule**
 >
-> Take function h with antiderivative H in J, s.t. $G(I)\sub J$. Then $\int (h\circ G)g=H\circ G$ (*note g = G')
+> Take function h with antiderivative H in J, s.t. $G(I)\sub J$. Then $\int (h\circ G)g=H\circ G$ (**Note g = G')
 >
 > ![fig15sub](pics/fig15sub.png)
 
@@ -1278,11 +1278,11 @@ If P, Q are any two partitions of I, then $P \cup Q$ is a **common refinement** 
 > $$
 
 > 
-> A Remann seq. for f is seq of form $S(P_n,y_n,f)$ where $\lim_{n\to \infin}m(P_n)=0$
+> A Riemann seq. for f is seq of form $S(P_n,y_n,f)$ where $\lim_{n\to \infin}m(P_n)=0$
 
 **Riemann Integral**
 
-Take f:[a,b]$\in \R$ where a<b $\in \R$. f is **Riemann integrable or R-integrable or integrable** if every Remann seq. for f converges. The set of integrable func. on [a,b] is denoted $\mathscr{R} [a,b]$
+Take f:[a,b]$\in \R$ where a<b $\in \R$. f is **Riemann integrable or R-integrable or integrable** if every Riemann seq. for f converges. The set of integrable func. on [a,b] is denoted $\mathscr{R} [a,b]$
 
 > Lemma:
 >
@@ -1295,8 +1295,9 @@ Take f:[a,b]$\in \R$ where a<b $\in \R$. f is **Riemann integrable or R-integrab
 > Suppose f is integrable on [a,b]. The **Riemann integral** or f on [a,b] is defined to be the common limit of of its Riemann seq. or:
 > $$
 > \int_a^bf\ or\ \int_a^bf dx\ or\ \int_a^b fdx
-> 
 > $$
+> 
+>
 
 **Fundamental Theorem of Calculus (Part I)**
 
