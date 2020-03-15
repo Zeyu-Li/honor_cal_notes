@@ -1184,7 +1184,7 @@ Also for a formal power series centered at c, with radius R > 0, f is continuous
 >
 > Also f is smooth on (c-R, c+R) and $f^{(n)}$ is again a power series namely $D^n(f)$ and $a_n=\frac{1}{n!}D^n(f)(c)$
 
-Let I be an open interval, and f a function defined on I. We say that f is analytic at $c \in I$, if there is a formal power series g centered at c convergent on an interval $(c-\delta, c+\delta)\sub I$ for some $\delta$ > 0, such that f(x)=g(x) on $(c-\delta, c+\delta)$. We say 𝑓 is analytic if that holds for every $c\in I $.
+Let I be an open interval, and f a function defined on I. We say that f is **analytic** at $c \in I$, if there is a formal power series g centered at c convergent on an interval $(c-\delta, c+\delta)\sub I$ for some $\delta$ > 0, such that f(x)=g(x) on $(c-\delta, c+\delta)$. We say 𝑓 is analytic if that holds for every $c\in I $.
 
 ![fig13trans](pics/fig13trans.png)
 
