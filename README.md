@@ -107,7 +107,7 @@ $\exist! \to$ there exists unique
 
 
 
-$Q.E.D. \to$ and it is proved
+$Q.E.D. \to$ and it is proved (Latin)
 
 $\therefore\ \to$ therefore 
 
@@ -121,7 +121,7 @@ $\N \to$ natural numbers (i.e. 1,2,3,4...) [\* note 0 might be included in natur
 
 $W \to$ whole numbers ($\{0\} \cup \N$) 
 
-$\Z \to$ integers (i.e. ..-2,-1,0,1,2...)
+$\Z \to$ integers (i.e. ...-2,-1,0,1,2...)
 
 $\Q \to$ rational numbers (anything that can be expressed as $\frac{p}{q}, where\ p\in\Z\ and \ q\in\N$)
 
