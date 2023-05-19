@@ -2,7 +2,7 @@
 
 ## About
 
-This is a summery of **Honors Calculus** (117 + 118) (or as some people call it: "**Abstract Calculus**")
+This is a summary of **Honors Calculus** (117 + 118) (or as some people call it: "**Abstract Calculus**")
 This course will focus on set theory and number theory (and logic)
 
 \* note this won't display properly on GitHub, I use a program called [Typora](https://typora.io/) with inline math enabled
