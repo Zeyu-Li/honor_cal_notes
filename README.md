@@ -117,7 +117,7 @@ $\because\ \to$ because
 
 ##### Fields
 
-$\N \to$ natural numbers (i.e. 1,2,3,4...) [\* note 0 might be included in natural numbers depending on what text book is in use]
+$\N \to$ natural numbers (i.e. 1,2,3,4...) [\* note 0 might be included in natural numbers depending on what textbook is in use]
 
 $W \to$ whole numbers ($\{0\} \cup \N$) 
 
@@ -163,7 +163,7 @@ From Bowmen notes
 
 There are 2 truth values, true (T or topology) and false (F or contradiction)
 
-In math, there are established rules (which were set arbitrarily but is important for consistence around the world) for operations on truth values
+In math, there are established rules (which were set arbitrarily but is important for consistency around the world) for operations on truth values
 
 Most of the time, a truth table will be used to illustrate how operators effect the truth value of a statement
 
@@ -814,7 +814,7 @@ For any natural number n we say 𝑓 is n-times differentiable at x if:
 
 A function is called smooth if it is n times differentiable everywhere in its domain for every n
 
-Therefore, know that all polynomial function (and trig. functions) are smooth everywhere
+Therefore, know that all polynomial functions (and trig. functions) are smooth everywhere
 
 Any rational function is also diff. everywhere in its domain
 
@@ -863,7 +863,7 @@ If f'=0, then a local extremum exists or is said to be a critical point
 
 if f is continuous on [a, b] and diff on at least (a,b), s.t. f(a)=f(b), then, $\exist c\in (a,b), s.t. f'(c)=0$
 
-This means that if the points a, b are equal on f, then in-between a and b, there is a least one point such that the derivate is 0
+This means that if the points a, b are equal on f, then in-between a and b, there is a least one point such that the derivative is 0
 
 <a name="MVT"></a>
 
@@ -1086,7 +1086,7 @@ Prove in chapter 3, page 6 of notes
 
 **Leibniz Rule**
 
-Let $a_n\ge0$ be a montone decreasing seq with limit 0.
+Let $a_n\ge0$ be a monotone decreasing seq with limit 0.
 
 Then $\sum_{n=1}^{\infin}(-1)^na_n$ converges
 
@@ -1096,7 +1096,7 @@ Proof: it is a bounded series and follows Dirichlet's Rule, QED.
 
 #### 27. Rearranging Series
 
-Take S =  $\sum_{n=1}^{\infin}a_n$. We say a **rearrangement** or **reordering** of the series S is a series of form $S_\sigma := \sum_{n=1}^{\infin}a_{\sigma(n)}$ where $\sigma: \N \to \N$ is a bijection. In this context often also called a **permutation**.
+Take S =  $\sum_{n=1}^{\infin}a_n$. We say a **rearrangement** or **reordering** of the series S is a series of form $S_\sigma := \sum_{n=1}^{\infin}a_{\sigma(n)}$ where $\sigma: \N \to \N$ is a bijection. In this context it is often also called a **permutation**.
 
 
 
@@ -1122,7 +1122,7 @@ Take the same S a above and let it be convergent but not absolutely convergent. 
 
 #### 28. Double Seq.
 
-A sum of two series is another series. A product of series is an infinite series of the original two series. This an be represented by a matrix
+A sum of two series is another series. A product of series is an infinite series of the original two series. This can be represented by a matrix
 
 An infinite series converges absolutely if both original series converge absolutely (also the limit is the limit of the product of the two series)
 
@@ -1226,7 +1226,7 @@ $$
 
 #### 31. Integration
 
-Also known as the antiderivative because it is the inverse of differentiation. It is analogue for a infinite sum. 
+Also known as the antiderivative because it is the inverse of differentiation. It is analogue for an infinite sum. 
 
 > Def. 
 >
@@ -1320,7 +1320,7 @@ Then $F(b)-F(a)=\int_a^bf(x)dx$
 >
 > **Note:
 >
-> The theorem does not make any statement about cases where F' is not integrable. There are functions with non-integrable derivative. Conversely, even if a function is integrable it need not have an antiderivative. This is an unlimited source of mistakes
+> The theorem does not make any statement about cases where F' is not integrable. There are functions with non-integrable derivatives. Conversely, even if a function is integrable it need not have an antiderivative. This is an unlimited source of mistakes
 
 If f is integrable on [a,b] and has antiderivative F, it can be written as $[F]_a^b$ for F(b) - F(a)
 
@@ -1375,7 +1375,7 @@ When in doubt, write ""***clearly***..." even in multiple choice, and especially
 
 ----
 
-My school had an extraordinary honors calculus year. The main prof left by second semester and a German prof can in to sub, but, because of his Germanicness (he literally goes off of a German textbook), it was difficult to follow his sometimes rigorous and sometimes not rigorous (he called them trivial) proofs. 
+My school had an extraordinary honors calculus year. The main prof left by second semester and a German prof can into sub, but, because of his Germanicness (he literally goes off of a German textbook), it was difficult to follow his sometimes rigorous and sometimes not rigorous (he called them trivial) proofs. 
 
 Also, at my university, compute 272 is trivially similar to 117. 
 
@@ -1393,7 +1393,7 @@ Dedicated to Dr. Terry Gannon who definitely did not abandon the class
 
 ## Contributions
 
-Contribute if and only if you know what you are doing (and optionally, it would help if you where Germanic or fluent in Germanics)
+Contribute if and only if you know what you are doing (and optionally, it would help if you were Germanic or fluent in Germanics)
 
-\* If someone wants to convert this to Latex, go ahead and pull request (must have a index or contents page with links). I tried with pandoc, but it was not as complete as I thought so if anyone wants to do clean up, go ahead, also I can just export as pdf
+\* If someone wants to convert this to Latex, go ahead and pull request (must have an index or contents page with links). I tried with pandoc, but it was not as complete as I thought so if anyone wants to do clean up, go ahead, also I can just export as pdf
 
